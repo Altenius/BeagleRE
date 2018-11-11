@@ -1,0 +1,9 @@
+[package]
+name = "beaglere"
+version = "0.1.0"
+authors = ["Altenius <jacobjm18@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+bitflags = "1.0.4"
+smallvec = "0.6.5"
