@@ -1,4 +1,5 @@
 use bitflags::bitflags;
+use std::cmp;
 
 /// Group of `[Section]`s
 pub struct Layout {
@@ -66,6 +67,9 @@ impl Layout {
 		while !buffer.is_empty() {
 			// Find the offset within the section
 			let offset = address - section.0;
+			let to_read = cmp::min(section.1.memory.len() - offset, buffer.len());
+			buffer[..to_read].clone_from_slice(&section.1.memory[offset..to_read]);
+
 			
 		}
 
