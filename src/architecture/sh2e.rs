@@ -21,6 +21,10 @@ impl Instruction for SuperHInstruction {
 
 impl Architecture for SH2E {
 	fn disassemble_single(&self, layout: &Layout, address: usize) -> Result<(SmallVec<[Token; 6]>, usize)> {
+		let mut instr = &[0; 2];
+
+		// Read two bytes for the instruction
+
 		Err(Error::InvalidInstruction)
 	}
 }

@@ -17,7 +17,7 @@ pub trait Architecture {
 }
 
 pub enum Token {
-	Opcode,
+	Opcode(&'static str),
 	Intermediate,
 }
 
