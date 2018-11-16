@@ -194,6 +194,13 @@ const INSTRUCTIONS: &'static [SuperHInstruction] = &[
 	SuperHInstruction {opcode: "mov.b", format: SuperHFormat::D(0b11000000), arguments: &[ArgumentType::DirectSrcReg, ArgumentType::IndirectGbrDisp]}, // Rm = R0
 	SuperHInstruction {opcode: "mov.w", format: SuperHFormat::D(0b11000001), arguments: &[ArgumentType::DirectSrcReg, ArgumentType::IndirectGbrDisp]}, // Rm = R0
 	SuperHInstruction {opcode: "mov.l", format: SuperHFormat::D(0b11000010), arguments: &[ArgumentType::DirectSrcReg, ArgumentType::IndirectGbrDisp]}, // Rm = R0
+
+	SuperHInstruction {opcode: "mov.b", format: SuperHFormat::D(0b11000100), arguments: &[ArgumentType::IndirectGbrDisp, ArgumentType::DirectDestReg]}, // Rn = R0
+	SuperHInstruction {opcode: "mov.w", format: SuperHFormat::D(0b11000101), arguments: &[ArgumentType::IndirectGbrDisp, ArgumentType::DirectDestReg]}, // Rn = R0
+	SuperHInstruction {opcode: "mov.l", format: SuperHFormat::D(0b11000110), arguments: &[ArgumentType::IndirectGbrDisp, ArgumentType::DirectDestReg]}, // Rn = R0
+
+	SuperHInstruction {opcode: "mova", format: SuperHFormat::D(0b11000111), arguments: &[ArgumentType::IndirectPcDisp, ArgumentType::DirectDestReg]}, // Rn = R0
+	SuperHInstruction {opcode: "movt", format: SuperHFormat::N(0b0000, 0b00101001), arguments: &[ArgumentType::DirectDestReg]},
 ];
 
 
