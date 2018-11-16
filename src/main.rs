@@ -2,6 +2,7 @@ pub mod architecture;
 pub mod error;
 pub mod memory;
 pub mod workspace;
+pub mod il;
 
 fn main() {
     let mut ws = workspace::Workspace::new(Box::new(architecture::sh2e::SH2E::new()));
