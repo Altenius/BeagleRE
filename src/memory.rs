@@ -41,6 +41,12 @@ impl Section {
 }
 
 impl Layout {
+	pub fn new() -> Layout {
+		Layout {
+			sections: Vec::new(),
+		}
+	}
+
 	pub fn add_section(&mut self, section: Section) -> &mut Section {
 		let offset = section.address;
 		// Insert the section in order
@@ -71,7 +77,7 @@ impl Layout {
 			// Find the offset within the section
 			let offset = address - section.address;
 			let to_read = cmp::min(section.memory.len() - offset, buffer.len());
-			buffer[..to_read].clone_from_slice(&section.memory[offset..to_read]);
+			buffer[..to_read].clone_from_slice(&section.memory[offset..offset + to_read]);
 
 			// Increment pointer
 			buffer = &mut buffer[to_read..];
